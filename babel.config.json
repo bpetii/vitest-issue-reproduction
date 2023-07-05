@@ -1,0 +1,18 @@
+// We use project-wide Babel 7 configuration to allow rules to be applied also the the gui-library node_modules package
+// https://babeljs.io/docs/en/config-files#project-wide-configuration
+// https://github.com/babel/babel/issues/8672
+ {
+      "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+      ],
+      "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "babel-plugin-transform-md-import-to-string",
+        "@babel/plugin-transform-runtime", // See: https://github.com/babel/babel/issues/9849
+        ["@babel/plugin-transform-react-jsx", {
+          "runtime": "automatic"
+        }]
+      ]
+  }
+  
